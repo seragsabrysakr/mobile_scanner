@@ -1,10 +1,11 @@
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:equatable/equatable.dart';
 import 'package:mobile_scanner/src/objects/barcode.dart';
 
 /// This class represents a scanned barcode.
-class BarcodeCapture {
+class BarcodeCapture extends Equatable {
   /// Create a new [BarcodeCapture] instance.
   BarcodeCapture({
     this.barcodes = const <Barcode>[],
@@ -40,4 +41,8 @@ class BarcodeCapture {
   /// Prefer using `size.height` instead,
   /// as this getter will be removed in the future.
   double get height => size.height;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [barcodes];
 }

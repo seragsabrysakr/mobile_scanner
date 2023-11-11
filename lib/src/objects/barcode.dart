@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:equatable/equatable.dart';
 import 'package:mobile_scanner/src/enums/barcode_format.dart';
 import 'package:mobile_scanner/src/enums/barcode_type.dart';
 import 'package:mobile_scanner/src/objects/calendar_event.dart';
@@ -14,7 +15,7 @@ import 'package:mobile_scanner/src/objects/url_bookmark.dart';
 import 'package:mobile_scanner/src/objects/wifi.dart';
 
 /// Represents a single recognized barcode and its value.
-class Barcode {
+class Barcode extends Equatable {
   /// Creates a new [Barcode] instance.
   const Barcode({
     this.calendarEvent,
@@ -163,4 +164,8 @@ class Barcode {
 
   /// The Wireless network information that is embedded in the barcode.
   final WiFi? wifi;
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [rawValue];
 }
